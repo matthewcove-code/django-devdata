@@ -113,12 +113,10 @@ def sort_model_strategies(model_strategies):
     ]
 
 
-@functools.lru_cache(maxsize=32)
 def get_exported_pks_for_model(dest, model):
     return [str(x["pk"]) for x in get_exported_objects_for_model(dest, model)]
 
 
-@functools.lru_cache(maxsize=8)
 def get_exported_objects_for_model(dest, model):
     app_model_label = to_app_model_label(model)
     objects = []
